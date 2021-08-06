@@ -7,20 +7,15 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 
 private val NOTIFICATION_ID = 0
-private val REQUEST_CODE = 0
-private val FLAGS = 0
 
-
-fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context) {
+fun NotificationManager.sendNotification(
+    downloadStatus: String,
+    fileName: String,
+    applicationContext: Context
+) {
     val contentIntent = Intent(applicationContext, DetailActivity::class.java)
-   contentIntent.putExtra("messageBody",messageBody)
-    /*val snoozeIntent = Intent(applicationContext, SnoozeReceiver::class.java)
-    val snoozePendingIntent: PendingIntent = PendingIntent.getBroadcast(
-        applicationContext,
-        REQUEST_CODE,
-        snoozeIntent,
-        FLAGS
-    )*/
+    contentIntent.putExtra("downloadStatus", downloadStatus)
+    contentIntent.putExtra("fileName", fileName)
 
     val contentPendingIntent = PendingIntent.getActivity(
         applicationContext,
@@ -30,23 +25,23 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
     )
     val builder = NotificationCompat.Builder(
         applicationContext,
-        "A"
+        "download_file_channel"
     )
-        .setSmallIcon(R.drawable.cooked_egg)
-        .setContentTitle(applicationContext
-            .getString(R.string.notification_title))
-        .setContentText(messageBody)
+        .setSmallIcon(R.drawable.notification)
+        .setContentTitle(fileName)
+        .setContentText("Download " + downloadStatus)
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
-        /*.addAction(
-            R.drawable.egg_icon,
-            "ASD",
-            snoozePendingIntent
-        )*/
+        .addAction(
+            R.drawable.notification,
+            applicationContext.getString(R.string.notification_button),
+            contentPendingIntent
+        )
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     notify(NOTIFICATION_ID, builder.build())
 }
+
 fun NotificationManager.cancelNotifications() {
     cancelAll()
 }
