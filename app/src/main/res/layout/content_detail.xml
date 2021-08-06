@@ -69,6 +69,7 @@
             android:layout_marginEnd="@dimen/twenty"
             android:layout_marginBottom="@dimen/thirty"
             android:background="@color/colorPrimary"
+            android:textAllCaps="false"
             android:text="@string/ok"
             android:textColor="@color/white"
             android:textSize="@dimen/twenty"
