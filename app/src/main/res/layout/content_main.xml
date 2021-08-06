@@ -63,9 +63,12 @@
             android:layout_width="@dimen/zero"
             android:layout_height="@dimen/sixty"
             android:layout_margin="@dimen/twenty"
+            app:btnColor="@color/colorPrimary"
+            app:circleColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:textColor="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

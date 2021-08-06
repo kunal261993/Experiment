@@ -21,6 +21,9 @@ class LoadingButton @JvmOverloads constructor(
     var downloadStatus = "Download"
     private var circleAnimator = ValueAnimator()
     private var btnAnimator = ValueAnimator()
+    private var btnColor = 0
+    private var textColor = 0
+    private var circleColor = 0
     private val paintBtn = Paint()
     private val paintCircle = Paint()
     private val paintBtnText = Paint().apply {
@@ -75,6 +78,14 @@ class LoadingButton @JvmOverloads constructor(
 
     init {
         isClickable = true
+        context.theme.obtainStyledAttributes(attrs, R.styleable.LoadingButton, 0, 0).apply {
+            btnColor = getColor(R.styleable.LoadingButton_btnColor, 0)
+            textColor = getColor(R.styleable.LoadingButton_textColor, 0)
+            circleColor = getColor(R.styleable.LoadingButton_circleColor, 0)
+        }
+        paintBtn.color = btnColor
+        paintBtnText.color = textColor
+        paintCircle.color = circleColor
     }
 
     override fun performClick(): Boolean {
