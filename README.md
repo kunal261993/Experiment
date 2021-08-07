@@ -16,6 +16,6 @@ In this project I have created an app to download a file from the Internet by cl
 * **Motion Layout**
 
 ## Screenshots
-<img src="https://user-images.githubusercontent.com/7738156/128591051-93ee7831-cef4-499b-8f75-debf8baa316e.gif" width="250">&nbsp; <img src="https://user-images.githubusercontent.com/7738156/128591033-a3f0bdc9-ec25-49ba-b7b2-5dda2be06638.jpg" width="250">&nbsp; <img src="https://user-images.githubusercontent.com/7738156/128591042-d757bb05-9d2c-4ba6-b8f1-d68a9b6c5fbf.jpg" width="250">
+<img src="https://user-images.githubusercontent.com/7738156/128591051-93ee7831-cef4-499b-8f75-debf8baa316e.gif" width="270">&nbsp; <img src="https://user-images.githubusercontent.com/7738156/128591033-a3f0bdc9-ec25-49ba-b7b2-5dda2be06638.jpg" width="270">&nbsp; <img src="https://user-images.githubusercontent.com/7738156/128591042-d757bb05-9d2c-4ba6-b8f1-d68a9b6c5fbf.jpg" width="270">
 
 
